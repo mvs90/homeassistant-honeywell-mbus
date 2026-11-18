@@ -92,7 +92,10 @@ existing entry. Configure a replacement meter separately.
 This is **local polling, not push**. The HA coordinator schedules serialized
 refreshes; response time, initial validation and retries can extend the actual
 cadence. Start at 2 seconds and increase it if the network, meter or serial wiring
-cannot keep up. Reconnection and reload do not write a polling cache to disk.
+cannot keep up. On a busy host, increase the response timeout before increasing the scan interval;
+a longer timeout does not slow successful replies. The reference production
+installation uses a 3-second response allowance with a 2-second scan interval.
+Reconnection and reload do not write a polling cache to disk.
 
 ## Troubleshooting
 

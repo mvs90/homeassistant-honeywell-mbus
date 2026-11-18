@@ -54,3 +54,12 @@ After hardware acceptance and approval for production cutover:
 Do not merge the raw meter's lifetime total into an unrelated counter with a
 different baseline. Do not turn missing readings into zero or sum duplicate meters.
 Recorder history and InfluxDB series are separate; verify both explicitly.
+
+### Existing Recorder target IDs
+
+When a newly registered native sensor is renamed onto an existing historical
+entity ID, Recorder can report that it cannot rename the temporary sensor’s
+metadata because the target already exists. Do not delete the target history to
+silence that message. Confirm the original statistic ID, units and historical
+rows remain intact, and verify new samples continue on that ID. Temporary native
+IDs must not be added as duplicate Energy sources.

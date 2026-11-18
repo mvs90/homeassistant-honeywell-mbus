@@ -50,3 +50,22 @@ second attempt and recovered automatically. Initial two-reply validation took
 approximately 1.72 seconds; all accepted totals and identities were consistent.
 No physical switching or meter/gateway configuration commands were sent.
 This establishes short acceptance, not long-term reliability.
+
+## Native production acceptance on HA 2026.11.1
+
+- Actual HTTP setup, options and reconfiguration forms serialize successfully.
+  Malformed hosts produce a translated field error without a bus connection.
+- Exclusive MQTT-to-native cutover retained all 17 previous measurement entity IDs
+  and their units/classes. Original statistics were checked across 15 statistic
+  IDs and 435 historical rows; the historical response was identical. Energy
+  dashboard preferences were unchanged.
+- Reloading the integration kept all 20 registered entity IDs and resumed reads.
+- Normal replies were approximately 0.20 seconds. On the reference HA installation,
+  the response allowance was increased to 3 seconds after transient transport
+  timeouts; the scan interval remains 2 seconds. The default timeout remains
+  configurable. Increasing its allowance does not delay a healthy response.
+  After this tuning, all 26 subsequent cached-diagnostics observations were
+  healthy and showed ongoing refreshes.
+
+These checks do not prove uninterrupted operation over days, recovery from every
+host/storage fault, or compatibility with other meter profiles.
