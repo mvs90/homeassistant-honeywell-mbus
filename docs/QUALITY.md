@@ -20,7 +20,7 @@ The Core quality scale is used as a design checklist where applicable.
 | Localization | 18 complete UI/sensor locales, checked for equal keys and placeholders |
 | Reconfiguration | Same meter only; options automatically reload the integration |
 | Diagnostics | Redact host/serial, omit raw telegrams and credentials |
-| Tests | Native HA flows/platform/registry/reload, real loopback TCP, parser faults, cancellation, metadata and translations; enforced coverage floor |
+| Tests | Native HA flows/platform/registry/reload, real loopback TCP, parser faults, cancellation, metadata, translations and the actual HA HTTP form serializer; enforced coverage floor |
 | Continuous validation | Ruff, pytest, hassfest, HACS validator on pushes/PRs |
 | Documentation | Supported profile, installation/options, update behavior, troubleshooting, limitations, removal, examples and migration |
 | Security | No management credentials or write telegrams; no exposed actions or listeners; no third-party runtime dependency |

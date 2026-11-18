@@ -4,7 +4,7 @@ Native, asynchronous wired M-Bus readings from a **Honeywell EEM400C-D-M** throu
 a transparent TCP-to-serial bridge, such as **W&T Com-Server++ → RS232 → Relay PW20**.
 No MQTT broker, shell command, add-on or gateway management password is required.
 
-**Version 0.2.0.** Installable as a HACS custom repository or manually.
+**Version 0.2.1.** Installable as a HACS custom repository or manually.
 **Not submitted to or included in the HACS default store.** See the
 [quality checklist](docs/QUALITY.md) and [verification scope](docs/TESTING.md).
 Use the migration guide when replacing an existing reader.

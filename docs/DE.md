@@ -5,7 +5,7 @@ M-Bus und eine transparente TCP-/RS232-Brücke. Referenzanschluss: W&T
 Com-Server++ → Relay PW20 → Honeywell. MQTT, Shell-Befehle und ein
 Verwaltungskennwort des W&T werden nicht benötigt.
 
-Version 0.2.0 unterstützt den geprüften HON-Telegrammaufbau mit
+Version 0.2.1 unterstützt den geprüften HON-Telegrammaufbau mit
 Geräteversionsbyte 0x15 und 152 Byte Antwortlänge. Andere Modelle oder Profile
 werden noch nicht als unterstützt ausgegeben. Pro TCP-Brücke ist ein Zähler
 vorgesehen. Ein exklusiver Hardware-Abnahmetest muss vor jedem Umstieg erfolgen.

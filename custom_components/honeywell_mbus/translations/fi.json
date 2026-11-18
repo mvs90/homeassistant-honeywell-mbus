@@ -24,7 +24,8 @@
     "error": {
       "cannot_connect": "Ei kelvollista, tuoretta vastausta. Tarkista yhteys, sarja-asetukset ja muut väylän lukijat.",
       "unsupported_meter": "Valmistajaa, laiteversiota tai tietoprofiilia ei tueta.",
-      "wrong_meter": "Toinen mittari vastaa. Nykyistä energiahistoriaa ei voi liittää siihen."
+      "wrong_meter": "Toinen mittari vastaa. Nykyistä energiahistoriaa ei voi liittää siihen.",
+      "invalid_host": "Anna palvelimen nimi tai IP-osoite ilman URL-osoitetta, porttia tai välilyöntejä."
     },
     "abort": {
       "already_configured": "Tämä mittari tai TCP-silta on jo määritetty.",

@@ -24,7 +24,8 @@
     "error": {
       "cannot_connect": "Nessuna risposta valida e recente. Controlla connessione, parametri seriali e altri lettori del bus.",
       "unsupported_meter": "Produttore, versione o profilo dati non supportati.",
-      "wrong_meter": "Risponde un altro contatore. Non è possibile assegnargli la cronologia energetica esistente."
+      "wrong_meter": "Risponde un altro contatore. Non è possibile assegnargli la cronologia energetica esistente.",
+      "invalid_host": "Inserisci un nome host o un indirizzo IP senza URL, porta o spazi."
     },
     "abort": {
       "already_configured": "Questo contatore o ponte TCP è già configurato.",

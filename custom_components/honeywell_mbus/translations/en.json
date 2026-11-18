@@ -24,7 +24,8 @@
     "error": {
       "cannot_connect": "No valid, fresh response. Check the endpoint, UART settings and competing bus readers.",
       "unsupported_meter": "The meter manufacturer, device version or record profile is not supported.",
-      "wrong_meter": "This endpoint answers for another meter. Existing energy history cannot be reassigned to it."
+      "wrong_meter": "This endpoint answers for another meter. Existing energy history cannot be reassigned to it.",
+      "invalid_host": "Enter a hostname or IP address without a URL, port or spaces."
     },
     "abort": {
       "already_configured": "This meter or TCP bridge is already configured.",

@@ -24,7 +24,8 @@
     "error": {
       "cannot_connect": "Geen geldig, actueel antwoord. Controleer de verbinding, seriële instellingen en andere buslezers.",
       "unsupported_meter": "Fabrikant, apparaatversie of gegevensprofiel wordt niet ondersteund.",
-      "wrong_meter": "Een andere meter antwoordt. De bestaande energiehistorie mag hier niet aan worden gekoppeld."
+      "wrong_meter": "Een andere meter antwoordt. De bestaande energiehistorie mag hier niet aan worden gekoppeld.",
+      "invalid_host": "Voer een hostnaam of IP-adres in zonder URL, poort of spaties."
     },
     "abort": {
       "already_configured": "Deze meter of TCP-brug is al ingesteld.",

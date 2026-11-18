@@ -24,7 +24,8 @@
     "error": {
       "cannot_connect": "Aucune réponse valide et récente. Vérifiez la connexion, les paramètres série et les autres lecteurs du bus.",
       "unsupported_meter": "Fabricant, version ou profil de données non pris en charge.",
-      "wrong_meter": "Un autre compteur répond. Son historique ne peut pas remplacer celui du compteur existant."
+      "wrong_meter": "Un autre compteur répond. Son historique ne peut pas remplacer celui du compteur existant.",
+      "invalid_host": "Indiquez un nom d’hôte ou une adresse IP sans URL, port ni espaces."
     },
     "abort": {
       "already_configured": "Ce compteur ou ce pont TCP est déjà configuré.",

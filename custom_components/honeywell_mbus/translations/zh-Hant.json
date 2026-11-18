@@ -24,7 +24,8 @@
     "error": {
       "cannot_connect": "未收到有效且最新的回應。請檢查連線、序列埠設定和其他匯流排讀取程式。",
       "unsupported_meter": "不支援此製造商、裝置版本或資料格式。",
-      "wrong_meter": "回應來自另一電表，不能將現有能源歷史紀錄指派給它。"
+      "wrong_meter": "回應來自另一電表，不能將現有能源歷史紀錄指派給它。",
+      "invalid_host": "請輸入主機名稱或 IP 位址，不要包含 URL、連接埠或空格。"
     },
     "abort": {
       "already_configured": "此電表或 TCP 橋接器已設定。",

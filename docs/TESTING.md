@@ -2,8 +2,8 @@
 
 Environment: macOS arm64, Python 3.14.6, Home Assistant 2026.11.0.
 
-- **128 tests passed**.
-- **98.65% combined statement/branch coverage**, with a 95% minimum enforced.
+- **139 tests passed**.
+- **98.68% combined statement/branch coverage**, with a 95% minimum enforced.
 - Ruff lint and formatting checks pass.
 - One deprecation warning originates in HA's HTTP application dependency, outside
   this integration. There are no integration test failures.
@@ -19,6 +19,7 @@ Environment: macOS arm64, Python 3.14.6, Home Assistant 2026.11.0.
   replies, access-counter rollover, cancellation and prompt close.
 - Decreasing energy totals are rejected during initial validation and subsequent
   reads. A valid later sample recovers without publishing a fabricated zero.
+- HA’s actual HTTP form serializer for setup, reconfiguration, options and malformed-host errors.
 - Native HA config manager, UI validation, duplicate endpoint/serial protection,
   same-meter reconfiguration, options and redacted diagnostics.
 - Native HA sensor platform and entity registry: 20 registered sensors, 17 enabled

@@ -24,7 +24,8 @@
     "error": {
       "cannot_connect": "No hay respuesta válida y reciente. Revisa la conexión, la configuración serie y otros lectores del bus.",
       "unsupported_meter": "El fabricante, la versión o el perfil de datos no son compatibles.",
-      "wrong_meter": "Responde otro contador. No se le puede asignar el historial de energía existente."
+      "wrong_meter": "Responde otro contador. No se le puede asignar el historial de energía existente.",
+      "invalid_host": "Introduce un nombre de host o una dirección IP sin URL, puerto ni espacios."
     },
     "abort": {
       "already_configured": "Este contador o puente TCP ya está configurado.",

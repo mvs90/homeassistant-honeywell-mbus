@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.1
+
+- Fix HA HTTP form serialization by separating host normalization from the UI schema.
+- Report malformed hosts as a translated field error without contacting the bus.
+- Exercise HA’s actual HTTP form serializer for setup, reconfiguration and options.
+
 ## 0.2.0
 
 - Complete setup/options/errors/sensor translations in 18 languages.

@@ -24,7 +24,8 @@
     "error": {
       "cannot_connect": "Ingen gyldig, fersk respons. Kontroller tilkoblingen, serieinnstillingene og andre busslesere.",
       "unsupported_meter": "Produsent, enhetsversjon eller dataprofil støttes ikke.",
-      "wrong_meter": "En annen måler svarer. Eksisterende energihistorikk kan ikke knyttes til den."
+      "wrong_meter": "En annen måler svarer. Eksisterende energihistorikk kan ikke knyttes til den.",
+      "invalid_host": "Oppgi et vertsnavn eller en IP-adresse uten URL, port eller mellomrom."
     },
     "abort": {
       "already_configured": "Denne måleren eller TCP-broen er allerede konfigurert.",

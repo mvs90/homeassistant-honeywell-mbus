@@ -24,7 +24,8 @@
     "error": {
       "cannot_connect": "Žádná platná a aktuální odpověď. Zkontrolujte připojení, sériové nastavení a ostatní čtečky sběrnice.",
       "unsupported_meter": "Výrobce, verze zařízení nebo datový profil nejsou podporovány.",
-      "wrong_meter": "Odpovídá jiný měřič. Nelze k němu přiřadit stávající historii energie."
+      "wrong_meter": "Odpovídá jiný měřič. Nelze k němu přiřadit stávající historii energie.",
+      "invalid_host": "Zadejte název hostitele nebo IP adresu bez URL, portu a mezer."
     },
     "abort": {
       "already_configured": "Tento měřič nebo most TCP je již nastaven.",

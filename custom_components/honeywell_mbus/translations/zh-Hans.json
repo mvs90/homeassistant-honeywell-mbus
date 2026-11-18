@@ -24,7 +24,8 @@
     "error": {
       "cannot_connect": "未收到有效且最新的响应。请检查连接、串口设置和其他总线读取程序。",
       "unsupported_meter": "不支持此制造商、设备版本或数据格式。",
-      "wrong_meter": "响应来自另一电表，不能将现有能源历史记录分配给它。"
+      "wrong_meter": "响应来自另一电表，不能将现有能源历史记录分配给它。",
+      "invalid_host": "请输入主机名或 IP 地址，不要包含 URL、端口或空格。"
     },
     "abort": {
       "already_configured": "此电表或 TCP 网桥已配置。",

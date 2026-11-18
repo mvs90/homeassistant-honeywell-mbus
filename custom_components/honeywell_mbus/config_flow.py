@@ -47,7 +47,7 @@ def connection_schema(defaults: dict[str, Any] | None = None) -> vol.Schema:
     defaults = defaults or {}
     return vol.Schema(
         {
-            vol.Required(CONF_HOST, default=defaults.get(CONF_HOST, vol.UNDEFINED)): normalize_host,
+            vol.Required(CONF_HOST, default=defaults.get(CONF_HOST, vol.UNDEFINED)): cv.string,
             vol.Required(CONF_PORT, default=defaults.get(CONF_PORT, DEFAULT_PORT)): cv.port,
             vol.Required(
                 CONF_ADDRESS, default=defaults.get(CONF_ADDRESS, DEFAULT_ADDRESS)
@@ -81,6 +81,14 @@ class HoneywellConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         errors: dict[str, str] = {}
         if user_input is not None:
             user_input = connection_schema()(user_input)
+            try:
+                user_input[CONF_HOST] = normalize_host(user_input[CONF_HOST])
+            except vol.Invalid:
+                return self.async_show_form(
+                    step_id="user",
+                    data_schema=connection_schema(user_input),
+                    errors={CONF_HOST: "invalid_host"},
+                )
             # One reader per gateway prevents independent sockets fighting over
             # a shared serial bus. Multiple meters/bridge are not a v0.1 feature.
             self._async_abort_entries_match(
@@ -109,6 +117,14 @@ class HoneywellConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         errors: dict[str, str] = {}
         if user_input is not None:
             user_input = connection_schema()(user_input)
+            try:
+                user_input[CONF_HOST] = normalize_host(user_input[CONF_HOST])
+            except vol.Invalid:
+                return self.async_show_form(
+                    step_id="reconfigure",
+                    data_schema=connection_schema(user_input),
+                    errors={CONF_HOST: "invalid_host"},
+                )
             for existing in self._async_current_entries():
                 if (
                     existing.entry_id != entry.entry_id

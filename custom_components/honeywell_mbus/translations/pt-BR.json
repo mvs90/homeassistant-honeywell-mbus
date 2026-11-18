@@ -24,7 +24,8 @@
     "error": {
       "cannot_connect": "Nenhuma resposta válida e recente. Verifique a conexão, os parâmetros seriais e outros leitores do barramento.",
       "unsupported_meter": "Fabricante, versão ou perfil de dados não compatível.",
-      "wrong_meter": "Outro medidor está respondendo. O histórico de energia existente não pode ser atribuído a ele."
+      "wrong_meter": "Outro medidor está respondendo. O histórico de energia existente não pode ser atribuído a ele.",
+      "invalid_host": "Informe um nome de host ou endereço IP sem URL, porta ou espaços."
     },
     "abort": {
       "already_configured": "Este medidor ou esta ponte TCP já está configurado.",

@@ -57,11 +57,12 @@ def flow(hass):
 
 def test_schema_defaults_and_host_normalization():
     assert connection_schema()({"host": " METER.Example. "}) == {
-        "host": "meter.example",
+        "host": " METER.Example. ",
         "port": 8000,
         "primary_address": 1,
     }
     assert normalize_host("::1") == "::1"
+    assert normalize_host(" METER.Example. ") == "meter.example"
 
 
 @pytest.mark.parametrize(
@@ -410,3 +411,44 @@ async def test_real_ha_platform_registry_reload_and_unload(hass, meter_server):
         assert await hass.config_entries.async_unload(entry.entry_id)
         await hass.async_block_till_done()
         assert owned_client._closed
+
+
+@pytest.mark.parametrize("step", ["user", "reconfigure", "options"])
+async def test_real_ha_form_json_serialization(flow, entry, step):
+    """Use HA's actual HTTP form serializer, not only the internal flow manager."""
+    import json
+
+    from homeassistant.helpers.data_entry_flow import FlowManagerIndexView
+
+    if step == "reconfigure":
+        flow.context = {"source": "reconfigure", "entry_id": entry.entry_id}
+        result = await flow.async_step_reconfigure()
+    elif step == "options":
+        options = HoneywellConfigFlow.async_get_options_flow(entry)
+        options.hass = flow.hass
+        options.handler = entry.entry_id
+        result = await options.async_step_init()
+    else:
+        result = await flow.async_step_user()
+    serialized = FlowManagerIndexView(None)._prepare_result_json(result)
+    assert isinstance(serialized["data_schema"], list)
+    assert serialized["data_schema"]
+    json.dumps(serialized)
+
+
+@pytest.mark.parametrize("step", ["user", "reconfigure"])
+@pytest.mark.parametrize("host", ["", "https://device/", "host name", "meter:8000"])
+async def test_invalid_host_is_a_serializable_field_error(flow, entry, step, host):
+    import json
+
+    from homeassistant.helpers.data_entry_flow import FlowManagerIndexView
+
+    if step == "reconfigure":
+        flow.context = {"source": "reconfigure", "entry_id": entry.entry_id}
+    with patch(
+        "custom_components.honeywell_mbus.config_flow.validate_connection", AsyncMock()
+    ) as probe:
+        result = await getattr(flow, f"async_step_{step}")({"host": host})
+    probe.assert_not_awaited()
+    assert result["errors"] == {"host": "invalid_host"}
+    json.dumps(FlowManagerIndexView(None)._prepare_result_json(result))

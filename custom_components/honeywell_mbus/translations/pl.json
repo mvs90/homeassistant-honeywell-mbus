@@ -24,7 +24,8 @@
     "error": {
       "cannot_connect": "Brak poprawnej, aktualnej odpowiedzi. Sprawdź połączenie, parametry portu szeregowego i inne programy odczytujące magistralę.",
       "unsupported_meter": "Producent, wersja urządzenia lub profil danych nie jest obsługiwany.",
-      "wrong_meter": "Odpowiada inny licznik. Nie można przypisać mu istniejącej historii energii."
+      "wrong_meter": "Odpowiada inny licznik. Nie można przypisać mu istniejącej historii energii.",
+      "invalid_host": "Podaj nazwę hosta lub adres IP bez URL, portu i spacji."
     },
     "abort": {
       "already_configured": "Ten licznik lub most TCP jest już skonfigurowany.",

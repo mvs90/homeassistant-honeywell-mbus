@@ -24,7 +24,8 @@
     "error": {
       "cannot_connect": "Keine gültige, frische Antwort. Verbindung, UART-Parameter und andere Busleser prüfen.",
       "unsupported_meter": "Hersteller, Geräteversion oder Telegrammprofil werden nicht unterstützt.",
-      "wrong_meter": "Hier antwortet ein anderer Zähler. Bestehende Energiehistorien dürfen ihm nicht zugewiesen werden."
+      "wrong_meter": "Hier antwortet ein anderer Zähler. Bestehende Energiehistorien dürfen ihm nicht zugewiesen werden.",
+      "invalid_host": "Hostnamen oder IP-Adresse ohne URL, Port oder Leerzeichen eingeben."
     },
     "abort": {
       "already_configured": "Dieser Zähler oder diese TCP-Brücke ist bereits eingerichtet.",
