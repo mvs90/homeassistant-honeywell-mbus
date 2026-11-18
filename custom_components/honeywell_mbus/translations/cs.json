@@ -1,0 +1,110 @@
+{
+  "title": "Honeywell M-Bus",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Připojit měřič Honeywell M-Bus",
+        "description": "Zadejte hostitele, datový port TCP a primární adresu. Nejprve zastavte ostatní čtečky sběrnice. Sériovou linku nastavte zvlášť: 8E1, bez řízení toku, stejná rychlost jako měřič. Heslo správce není potřeba.",
+        "data": {
+          "host": "Hostitel",
+          "port": "Datový port TCP",
+          "primary_address": "Primární adresa M-Bus"
+        }
+      },
+      "reconfigure": {
+        "title": "Změnit připojení",
+        "description": "Je povolen pouze stejný měřič. Identifikátory entit zůstanou zachovány.",
+        "data": {
+          "host": "Hostitel",
+          "port": "Datový port TCP",
+          "primary_address": "Primární adresa M-Bus"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Žádná platná a aktuální odpověď. Zkontrolujte připojení, sériové nastavení a ostatní čtečky sběrnice.",
+      "unsupported_meter": "Výrobce, verze zařízení nebo datový profil nejsou podporovány.",
+      "wrong_meter": "Odpovídá jiný měřič. Nelze k němu přiřadit stávající historii energie."
+    },
+    "abort": {
+      "already_configured": "Tento měřič nebo most TCP je již nastaven.",
+      "reconfigure_successful": "Připojení bylo aktualizováno."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Možnosti čtení",
+        "description": "Dotazy probíhají postupně. Pomalé odpovědi a opakování mohou prodloužit skutečný interval. Začněte na 2 sekundách; jde o pravidelné dotazování, ne push.",
+        "data": {
+          "scan_interval": "Interval čtení (sekundy)",
+          "response_timeout": "Časový limit odpovědi (sekundy)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "power": {
+        "name": "Výkon"
+      },
+      "energy": {
+        "name": "Energie"
+      },
+      "reactive_power": {
+        "name": "Jalový výkon"
+      },
+      "ct_ratio": {
+        "name": "Převod transformátoru"
+      },
+      "mbus_status": {
+        "name": "Stav M-Bus"
+      },
+      "last_read": {
+        "name": "Poslední úspěšné čtení"
+      },
+      "read_duration": {
+        "name": "Doba čtení"
+      },
+      "read_attempts": {
+        "name": "Pokusy o čtení"
+      },
+      "voltage_l1": {
+        "name": "Napětí L1"
+      },
+      "current_l1": {
+        "name": "Proud L1"
+      },
+      "power_l1": {
+        "name": "Výkon L1"
+      },
+      "reactive_power_l1": {
+        "name": "Jalový výkon L1"
+      },
+      "voltage_l2": {
+        "name": "Napětí L2"
+      },
+      "current_l2": {
+        "name": "Proud L2"
+      },
+      "power_l2": {
+        "name": "Výkon L2"
+      },
+      "reactive_power_l2": {
+        "name": "Jalový výkon L2"
+      },
+      "voltage_l3": {
+        "name": "Napětí L3"
+      },
+      "current_l3": {
+        "name": "Proud L3"
+      },
+      "power_l3": {
+        "name": "Výkon L3"
+      },
+      "reactive_power_l3": {
+        "name": "Jalový výkon L3"
+      }
+    }
+  }
+}

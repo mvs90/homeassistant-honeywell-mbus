@@ -4,10 +4,10 @@ Native, asynchronous wired M-Bus readings from a **Honeywell EEM400C-D-M** throu
 a transparent TCP-to-serial bridge, such as **W&T Com-Server++ → RS232 → Relay PW20**.
 No MQTT broker, shell command, add-on or gateway management password is required.
 
-**Development preview, version 0.1.0.** Prepared for installation as a HACS custom
-repository. **Not submitted to or included in the HACS default store.** Local
-protocol/emulator and Home Assistant tests do not replace a supervised hardware
-acceptance test. This version has not replaced an existing production reader.
+**Version 0.2.0.** Installable as a HACS custom repository or manually.
+**Not submitted to or included in the HACS default store.** See the
+[quality checklist](docs/QUALITY.md) and [verification scope](docs/TESTING.md).
+Use the migration guide when replacing an existing reader.
 
 [Deutsche Anleitung](docs/DE.md) · [Migration](docs/MIGRATION.md) ·
 [HACS readiness](docs/HACS_SUBMISSION.md) · [Protocol scope](docs/PROTOCOL.md)
@@ -38,7 +38,7 @@ There is no automatic bus scan, broadcast or secondary-address selection.
 - No invented zero values on failure: entities become unavailable and recover.
 - Stable device and entity identifiers independent of gateway IP and primary address.
 - Redacted downloadable diagnostics; no raw frames, hostnames or serial numbers.
-- English and German UI translations and bundled custom integration icons.
+- 18 complete UI/sensor translations and bundled custom integration icons.
 
 ### Sensors
 
@@ -57,6 +57,13 @@ its sign. Units and resolutions come from each telegram: the supported profile
 may report **10 or 100 W** and **0.01 or 0.1 kWh** steps. Polling faster does not
 improve physical resolution. Transformer scaling is not applied a second time.
 The device-version byte is not presented as a firmware version.
+
+## Examples
+
+Use total power for a UV feeder comparison and cumulative energy for the Energy
+dashboard. Phase readings help inspect voltage/current distribution. Do not add
+this meter to another meter of the same feeder when calculating total consumption.
+The optional timing sensors help diagnose slow gateways without recording raw frames.
 
 ## Installation
 

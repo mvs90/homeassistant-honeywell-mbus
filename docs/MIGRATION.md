@@ -1,6 +1,6 @@
 # Staged migration from an existing MQTT reader
 
-**Preparation only: no production migration is performed by this project.**
+**Migration is an explicit deployment step, never an automatic install side effect.**
 There is no automatic Recorder/statistics rewrite, MQTT deletion or entity-registry
 takeover. A change from MQTT unique IDs to native integration unique IDs needs an
 explicitly supervised migration. Do not run two readers against the same bus.

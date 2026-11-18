@@ -1,0 +1,110 @@
+{
+  "title": "Honeywell M-Bus",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Anslut en Honeywell M-Bus-mätare",
+        "description": "Ange värd, TCP-dataport och primäradress. Stoppa först andra läsare på bussen. Ställ in serieanslutningen separat: 8E1, ingen flödeskontroll och samma baudhastighet som mätaren. Inget administratörslösenord behövs.",
+        "data": {
+          "host": "Värd",
+          "port": "TCP-dataport",
+          "primary_address": "Primär M-Bus-adress"
+        }
+      },
+      "reconfigure": {
+        "title": "Ändra anslutning",
+        "description": "Endast samma mätare godtas. Entiteternas identifierare behålls.",
+        "data": {
+          "host": "Värd",
+          "port": "TCP-dataport",
+          "primary_address": "Primär M-Bus-adress"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Inget giltigt, aktuellt svar. Kontrollera anslutningen, serieinställningarna och andra bussläsare.",
+      "unsupported_meter": "Tillverkare, enhetsversion eller dataprofil stöds inte.",
+      "wrong_meter": "En annan mätare svarar. Befintlig energihistorik kan inte kopplas till den."
+    },
+    "abort": {
+      "already_configured": "Denna mätare eller TCP-brygga är redan konfigurerad.",
+      "reconfigure_successful": "Anslutningen har uppdaterats."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Avläsningsalternativ",
+        "description": "Förfrågningar görs i följd. Långsamma svar och nya försök kan förlänga det faktiska intervallet. Börja med 2 sekunder; detta är polling, inte push.",
+        "data": {
+          "scan_interval": "Avläsningsintervall (sekunder)",
+          "response_timeout": "Svarstidsgräns (sekunder)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "power": {
+        "name": "Effekt"
+      },
+      "energy": {
+        "name": "Energi"
+      },
+      "reactive_power": {
+        "name": "Reaktiv effekt"
+      },
+      "ct_ratio": {
+        "name": "Transformatorförhållande"
+      },
+      "mbus_status": {
+        "name": "M-Bus-status"
+      },
+      "last_read": {
+        "name": "Senaste lyckade avläsning"
+      },
+      "read_duration": {
+        "name": "Avläsningstid"
+      },
+      "read_attempts": {
+        "name": "Avläsningsförsök"
+      },
+      "voltage_l1": {
+        "name": "Spänning L1"
+      },
+      "current_l1": {
+        "name": "Ström L1"
+      },
+      "power_l1": {
+        "name": "Effekt L1"
+      },
+      "reactive_power_l1": {
+        "name": "Reaktiv effekt L1"
+      },
+      "voltage_l2": {
+        "name": "Spänning L2"
+      },
+      "current_l2": {
+        "name": "Ström L2"
+      },
+      "power_l2": {
+        "name": "Effekt L2"
+      },
+      "reactive_power_l2": {
+        "name": "Reaktiv effekt L2"
+      },
+      "voltage_l3": {
+        "name": "Spänning L3"
+      },
+      "current_l3": {
+        "name": "Ström L3"
+      },
+      "power_l3": {
+        "name": "Effekt L3"
+      },
+      "reactive_power_l3": {
+        "name": "Reaktiv effekt L3"
+      }
+    }
+  }
+}

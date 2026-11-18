@@ -1,0 +1,110 @@
+{
+  "title": "Honeywell M-Bus",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connecter un compteur Honeywell M-Bus",
+        "description": "Indiquez l’hôte, le port TCP de données et l’adresse primaire. Arrêtez les autres lecteurs du bus. Réglez séparément la liaison série : 8E1, sans contrôle de flux, même débit que le compteur. Aucun mot de passe de gestion requis.",
+        "data": {
+          "host": "Hôte",
+          "port": "Port TCP de données",
+          "primary_address": "Adresse primaire M-Bus"
+        }
+      },
+      "reconfigure": {
+        "title": "Modifier la connexion",
+        "description": "Seul le même compteur est accepté. Les identifiants des entités sont conservés.",
+        "data": {
+          "host": "Hôte",
+          "port": "Port TCP de données",
+          "primary_address": "Adresse primaire M-Bus"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Aucune réponse valide et récente. Vérifiez la connexion, les paramètres série et les autres lecteurs du bus.",
+      "unsupported_meter": "Fabricant, version ou profil de données non pris en charge.",
+      "wrong_meter": "Un autre compteur répond. Son historique ne peut pas remplacer celui du compteur existant."
+    },
+    "abort": {
+      "already_configured": "Ce compteur ou ce pont TCP est déjà configuré.",
+      "reconfigure_successful": "La connexion a été mise à jour."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options d’interrogation",
+        "description": "Les requêtes sont séquentielles. Les délais et tentatives peuvent allonger l’intervalle réel. Commencez à 2 secondes ; il s’agit d’interrogation, pas de notifications push.",
+        "data": {
+          "scan_interval": "Intervalle d’interrogation (secondes)",
+          "response_timeout": "Délai de réponse (secondes)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "power": {
+        "name": "Puissance"
+      },
+      "energy": {
+        "name": "Énergie"
+      },
+      "reactive_power": {
+        "name": "Puissance réactive"
+      },
+      "ct_ratio": {
+        "name": "Rapport de transformation"
+      },
+      "mbus_status": {
+        "name": "État M-Bus"
+      },
+      "last_read": {
+        "name": "Dernière lecture réussie"
+      },
+      "read_duration": {
+        "name": "Durée de lecture"
+      },
+      "read_attempts": {
+        "name": "Tentatives de lecture"
+      },
+      "voltage_l1": {
+        "name": "Tension L1"
+      },
+      "current_l1": {
+        "name": "Courant L1"
+      },
+      "power_l1": {
+        "name": "Puissance L1"
+      },
+      "reactive_power_l1": {
+        "name": "Puissance réactive L1"
+      },
+      "voltage_l2": {
+        "name": "Tension L2"
+      },
+      "current_l2": {
+        "name": "Courant L2"
+      },
+      "power_l2": {
+        "name": "Puissance L2"
+      },
+      "reactive_power_l2": {
+        "name": "Puissance réactive L2"
+      },
+      "voltage_l3": {
+        "name": "Tension L3"
+      },
+      "current_l3": {
+        "name": "Courant L3"
+      },
+      "power_l3": {
+        "name": "Puissance L3"
+      },
+      "reactive_power_l3": {
+        "name": "Puissance réactive L3"
+      }
+    }
+  }
+}

@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        homeassistant: ["2026.11.0", "2026.11.2"]
+        homeassistant: ["2026.11.0", "2026.11.1", "2026.11.2"]
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v6

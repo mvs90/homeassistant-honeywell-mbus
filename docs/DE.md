@@ -5,18 +5,18 @@ M-Bus und eine transparente TCP-/RS232-Brücke. Referenzanschluss: W&T
 Com-Server++ → Relay PW20 → Honeywell. MQTT, Shell-Befehle und ein
 Verwaltungskennwort des W&T werden nicht benötigt.
 
-Der erste Entwicklungsstand unterstützt den geprüften HON-Telegrammaufbau mit
+Version 0.2.0 unterstützt den geprüften HON-Telegrammaufbau mit
 Geräteversionsbyte 0x15 und 152 Byte Antwortlänge. Andere Modelle oder Profile
 werden noch nicht als unterstützt ausgegeben. Pro TCP-Brücke ist ein Zähler
-vorgesehen. Ein separater Hardware-Abnahmetest steht vor der Produktivmigration an.
+vorgesehen. Ein exklusiver Hardware-Abnahmetest muss vor jedem Umstieg erfolgen.
 
 ## Einrichtung
 
-Das Repository kann nach Bereitstellung über HACS als benutzerdefiniertes
+Das Repository kann über HACS als benutzerdefiniertes
 Integrationsrepository installiert werden. Es ist noch nicht im Standard-Store
 eingereicht. Nach dem Kopieren der Integration ist ein HA-Neustart für ihre
-Erkennung notwendig; bei der lokalen Entwicklung wird die produktive Instanz
-nicht verändert.
+Erkennung notwendig. Eine laufende Installation wird nur mit einem geplanten
+Umstieg gemäß Migrationsanleitung ersetzt.
 
 Unter **Einstellungen → Geräte & Dienste → Integration hinzufügen → Honeywell
 M-Bus** Host/IP, Rohdaten-TCP-Port (oft 8000) und Primäradresse eingeben. Der erste
@@ -50,4 +50,11 @@ derselbe Zähler behält seine Kennungen. Ein neuer Zähler darf die bestehende
 Energiehistorie nicht automatisch übernehmen.
 
 Für den Umzug vorhandener MQTT-Sensoren ist die separate [Migrationsanleitung](MIGRATION.md)
-maßgeblich. Der erste Entwicklungsstand führt diese Migration nicht selbst aus.
+maßgeblich. Die Integration führt diese Migration nicht automatisch aus.
+
+## Sprachen und Qualitätsprüfung
+
+Einrichtung, Optionen, Fehlermeldungen und Sensoren sind in 18 Sprachen übersetzt.
+Der [Qualitätsnachweis](QUALITY.md) beschreibt die HA-/HACS-Anforderungen, Tests
+und Grenzen. HACS-Validierung bedeutet keine Aufnahme in den Standard-Store und
+keine offizielle Home-Assistant-Qualitätsstufe.

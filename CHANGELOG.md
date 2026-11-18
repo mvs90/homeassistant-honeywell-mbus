@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.0
+
+- Complete setup/options/errors/sensor translations in 18 languages.
+- Explicit coordinator-only parallel update policy.
+- Translation/placeholder/package-contract validation and HA 2026.11.1 CI coverage.
+- HA/HACS quality checklist and production migration documentation.
+
 ## 0.1.0 — development preview
 
 - Native async wired M-Bus TCP API for the validated Honeywell EEM400C-D-M profile.

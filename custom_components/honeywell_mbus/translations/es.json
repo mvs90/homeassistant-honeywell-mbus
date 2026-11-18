@@ -1,0 +1,110 @@
+{
+  "title": "Honeywell M-Bus",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Conectar un contador Honeywell M-Bus",
+        "description": "Introduce el host, el puerto TCP de datos y la dirección primaria. Detén los demás lectores del bus. Configura el puerto serie por separado: 8E1, sin control de flujo y con la misma velocidad que el contador. No se necesita contraseña de administración.",
+        "data": {
+          "host": "Host",
+          "port": "Puerto TCP de datos",
+          "primary_address": "Dirección primaria M-Bus"
+        }
+      },
+      "reconfigure": {
+        "title": "Cambiar la conexión",
+        "description": "Solo se admite el mismo contador. Se conservan los identificadores de las entidades.",
+        "data": {
+          "host": "Host",
+          "port": "Puerto TCP de datos",
+          "primary_address": "Dirección primaria M-Bus"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "No hay respuesta válida y reciente. Revisa la conexión, la configuración serie y otros lectores del bus.",
+      "unsupported_meter": "El fabricante, la versión o el perfil de datos no son compatibles.",
+      "wrong_meter": "Responde otro contador. No se le puede asignar el historial de energía existente."
+    },
+    "abort": {
+      "already_configured": "Este contador o puente TCP ya está configurado.",
+      "reconfigure_successful": "Se ha actualizado la conexión."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opciones de consulta",
+        "description": "Las consultas se realizan en serie. Los tiempos de respuesta y reintentos pueden prolongar el intervalo real. Empieza con 2 segundos; se consulta periódicamente, no mediante push.",
+        "data": {
+          "scan_interval": "Intervalo de consulta (segundos)",
+          "response_timeout": "Tiempo de espera de respuesta (segundos)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "power": {
+        "name": "Potencia"
+      },
+      "energy": {
+        "name": "Energía"
+      },
+      "reactive_power": {
+        "name": "Potencia reactiva"
+      },
+      "ct_ratio": {
+        "name": "Relación del transformador"
+      },
+      "mbus_status": {
+        "name": "Estado M-Bus"
+      },
+      "last_read": {
+        "name": "Última lectura correcta"
+      },
+      "read_duration": {
+        "name": "Duración de lectura"
+      },
+      "read_attempts": {
+        "name": "Intentos de lectura"
+      },
+      "voltage_l1": {
+        "name": "Tensión L1"
+      },
+      "current_l1": {
+        "name": "Corriente L1"
+      },
+      "power_l1": {
+        "name": "Potencia L1"
+      },
+      "reactive_power_l1": {
+        "name": "Potencia reactiva L1"
+      },
+      "voltage_l2": {
+        "name": "Tensión L2"
+      },
+      "current_l2": {
+        "name": "Corriente L2"
+      },
+      "power_l2": {
+        "name": "Potencia L2"
+      },
+      "reactive_power_l2": {
+        "name": "Potencia reactiva L2"
+      },
+      "voltage_l3": {
+        "name": "Tensión L3"
+      },
+      "current_l3": {
+        "name": "Corriente L3"
+      },
+      "power_l3": {
+        "name": "Potencia L3"
+      },
+      "reactive_power_l3": {
+        "name": "Potencia reactiva L3"
+      }
+    }
+  }
+}

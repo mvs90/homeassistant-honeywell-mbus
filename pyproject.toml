@@ -1,6 +1,6 @@
 [project]
 name = "homeassistant-honeywell-mbus"
-version = "0.1.0"
+version = "0.2.0"
 description = "Native async Honeywell wired M-Bus sensors over a TCP serial bridge"
 requires-python = ">=3.14"
 license = "MIT"

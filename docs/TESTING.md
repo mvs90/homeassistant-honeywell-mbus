@@ -1,8 +1,8 @@
-# Initial local verification — 2026-11-18
+# Verification — 2026-11-18
 
 Environment: macOS arm64, Python 3.14.6, Home Assistant 2026.11.0.
 
-- **109 tests passed**.
+- **128 tests passed**.
 - **98.65% combined statement/branch coverage**, with a 95% minimum enforced.
 - Ruff lint and formatting checks pass.
 - One deprecation warning originates in HA's HTTP application dependency, outside
@@ -24,15 +24,28 @@ Environment: macOS arm64, Python 3.14.6, Home Assistant 2026.11.0.
 - Native HA sensor platform and entity registry: 20 registered sensors, 17 enabled
   by default; correct energy state class; stable entity IDs across reload; options
   automatically reload the integration; successful unload closes the owned client.
+- Complete translation keys, placeholders, sensor coverage and installable package metadata.
 - Source-tree check for actual installation endpoints, original serials and
   credentials before publication.
 
 ## Limits of this verification
 
-No integration was installed on the production HA instance. No second reader was
-connected to the real M-Bus and no physical commands were sent. A supervised real
-hardware acceptance test, long-running reliability test and production/history
-migration remain separate steps. HACS default-store acceptance is not implied.
+The automated suite uses a synthetic identity, loopback TCP and local HA. It
+never contacts a real gateway or switches devices. Separate exclusive hardware
+acceptance and deployment are recorded after their completion. A short acceptance
+test cannot establish long-term reliability. HACS default-store acceptance is not
+implied.
 
-CI also targets Home Assistant 2026.11.2 on Linux, plus hassfest and the official
+CI also targets Home Assistant 2026.11.1 and 2026.11.2 on Linux, plus hassfest and the official
 HACS repository validator. Consult actual GitHub workflow results for their status.
+
+## Exclusive real-hardware acceptance
+
+On 2026-11-18 the native API completed 18 valid reads on the reference
+W&T Com-Server++ → Relay PW20 → Honeywell EEM400C-D-M chain at 9600 baud,
+8E1. The legacy reader was stopped throughout the test and restored afterward.
+Steady reads took approximately 0.20 seconds. One refresh required the bounded
+second attempt and recovered automatically. Initial two-reply validation took
+approximately 1.72 seconds; all accepted totals and identities were consistent.
+No physical switching or meter/gateway configuration commands were sent.
+This establishes short acceptance, not long-term reliability.

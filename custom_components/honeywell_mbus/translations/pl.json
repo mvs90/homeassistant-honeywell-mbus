@@ -1,0 +1,110 @@
+{
+  "title": "Honeywell M-Bus",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Połącz licznik Honeywell M-Bus",
+        "description": "Podaj host, port danych TCP i adres podstawowy. Najpierw zatrzymaj inne programy odczytujące magistralę. Skonfiguruj port szeregowy osobno: 8E1, bez kontroli przepływu, ta sama prędkość co licznik. Hasło administratora nie jest potrzebne.",
+        "data": {
+          "host": "Host",
+          "port": "Port danych TCP",
+          "primary_address": "Adres podstawowy M-Bus"
+        }
+      },
+      "reconfigure": {
+        "title": "Zmień połączenie",
+        "description": "Dozwolony jest tylko ten sam licznik. Identyfikatory encji zostaną zachowane.",
+        "data": {
+          "host": "Host",
+          "port": "Port danych TCP",
+          "primary_address": "Adres podstawowy M-Bus"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Brak poprawnej, aktualnej odpowiedzi. Sprawdź połączenie, parametry portu szeregowego i inne programy odczytujące magistralę.",
+      "unsupported_meter": "Producent, wersja urządzenia lub profil danych nie jest obsługiwany.",
+      "wrong_meter": "Odpowiada inny licznik. Nie można przypisać mu istniejącej historii energii."
+    },
+    "abort": {
+      "already_configured": "Ten licznik lub most TCP jest już skonfigurowany.",
+      "reconfigure_successful": "Połączenie zostało zaktualizowane."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opcje odczytu",
+        "description": "Zapytania są wykonywane kolejno. Opóźnienia i ponowienia mogą wydłużyć rzeczywisty interwał. Zacznij od 2 sekund; to odpytywanie, nie push.",
+        "data": {
+          "scan_interval": "Interwał odczytu (sekundy)",
+          "response_timeout": "Limit czasu odpowiedzi (sekundy)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "power": {
+        "name": "Moc"
+      },
+      "energy": {
+        "name": "Energia"
+      },
+      "reactive_power": {
+        "name": "Moc bierna"
+      },
+      "ct_ratio": {
+        "name": "Przekładnia transformatora"
+      },
+      "mbus_status": {
+        "name": "Stan M-Bus"
+      },
+      "last_read": {
+        "name": "Ostatni udany odczyt"
+      },
+      "read_duration": {
+        "name": "Czas odczytu"
+      },
+      "read_attempts": {
+        "name": "Próby odczytu"
+      },
+      "voltage_l1": {
+        "name": "Napięcie L1"
+      },
+      "current_l1": {
+        "name": "Prąd L1"
+      },
+      "power_l1": {
+        "name": "Moc L1"
+      },
+      "reactive_power_l1": {
+        "name": "Moc bierna L1"
+      },
+      "voltage_l2": {
+        "name": "Napięcie L2"
+      },
+      "current_l2": {
+        "name": "Prąd L2"
+      },
+      "power_l2": {
+        "name": "Moc L2"
+      },
+      "reactive_power_l2": {
+        "name": "Moc bierna L2"
+      },
+      "voltage_l3": {
+        "name": "Napięcie L3"
+      },
+      "current_l3": {
+        "name": "Prąd L3"
+      },
+      "power_l3": {
+        "name": "Moc L3"
+      },
+      "reactive_power_l3": {
+        "name": "Moc bierna L3"
+      }
+    }
+  }
+}

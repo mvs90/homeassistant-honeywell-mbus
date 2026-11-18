@@ -1,0 +1,110 @@
+{
+  "title": "Honeywell M-Bus",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Honeywell M-Bus-meter verbinden",
+        "description": "Vul host, TCP-datapoort en primair adres in. Stop eerst andere lezers op deze bus. Stel de seriële verbinding apart in: 8E1, geen flowcontrol en dezelfde baudrate als de meter. Geen beheerderswachtwoord nodig.",
+        "data": {
+          "host": "Host",
+          "port": "TCP-datapoort",
+          "primary_address": "Primair M-Bus-adres"
+        }
+      },
+      "reconfigure": {
+        "title": "Verbinding wijzigen",
+        "description": "Alleen dezelfde meter is toegestaan. De entiteitsidentificaties blijven behouden.",
+        "data": {
+          "host": "Host",
+          "port": "TCP-datapoort",
+          "primary_address": "Primair M-Bus-adres"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Geen geldig, actueel antwoord. Controleer de verbinding, seriële instellingen en andere buslezers.",
+      "unsupported_meter": "Fabrikant, apparaatversie of gegevensprofiel wordt niet ondersteund.",
+      "wrong_meter": "Een andere meter antwoordt. De bestaande energiehistorie mag hier niet aan worden gekoppeld."
+    },
+    "abort": {
+      "already_configured": "Deze meter of TCP-brug is al ingesteld.",
+      "reconfigure_successful": "De verbinding is bijgewerkt."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Uitleesopties",
+        "description": "Verzoeken worden na elkaar verwerkt. Trage antwoorden en nieuwe pogingen kunnen het werkelijke interval verlengen. Begin met 2 seconden; dit is polling, geen push.",
+        "data": {
+          "scan_interval": "Uitleesinterval (seconden)",
+          "response_timeout": "Antwoordtime-out (seconden)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "power": {
+        "name": "Vermogen"
+      },
+      "energy": {
+        "name": "Energie"
+      },
+      "reactive_power": {
+        "name": "Blindvermogen"
+      },
+      "ct_ratio": {
+        "name": "Transformatorverhouding"
+      },
+      "mbus_status": {
+        "name": "M-Bus-status"
+      },
+      "last_read": {
+        "name": "Laatste geslaagde uitlezing"
+      },
+      "read_duration": {
+        "name": "Uitleesduur"
+      },
+      "read_attempts": {
+        "name": "Uitleespogingen"
+      },
+      "voltage_l1": {
+        "name": "Spanning L1"
+      },
+      "current_l1": {
+        "name": "Stroom L1"
+      },
+      "power_l1": {
+        "name": "Vermogen L1"
+      },
+      "reactive_power_l1": {
+        "name": "Blindvermogen L1"
+      },
+      "voltage_l2": {
+        "name": "Spanning L2"
+      },
+      "current_l2": {
+        "name": "Stroom L2"
+      },
+      "power_l2": {
+        "name": "Vermogen L2"
+      },
+      "reactive_power_l2": {
+        "name": "Blindvermogen L2"
+      },
+      "voltage_l3": {
+        "name": "Spanning L3"
+      },
+      "current_l3": {
+        "name": "Stroom L3"
+      },
+      "power_l3": {
+        "name": "Vermogen L3"
+      },
+      "reactive_power_l3": {
+        "name": "Blindvermogen L3"
+      }
+    }
+  }
+}

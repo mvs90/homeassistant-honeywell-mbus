@@ -1,0 +1,110 @@
+{
+  "title": "Honeywell M-Bus",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Yhdistä Honeywell M-Bus -mittari",
+        "description": "Anna palvelin, TCP-dataportti ja ensisijainen osoite. Pysäytä muut väylän lukijat ensin. Määritä sarjayhteys erikseen: 8E1, ei vuonohjausta, sama nopeus kuin mittarissa. Hallintasalasanaa ei tarvita.",
+        "data": {
+          "host": "Palvelin",
+          "port": "TCP-dataportti",
+          "primary_address": "Ensisijainen M-Bus-osoite"
+        }
+      },
+      "reconfigure": {
+        "title": "Muuta yhteyttä",
+        "description": "Vain sama mittari hyväksytään. Entiteettien tunnisteet säilytetään.",
+        "data": {
+          "host": "Palvelin",
+          "port": "TCP-dataportti",
+          "primary_address": "Ensisijainen M-Bus-osoite"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Ei kelvollista, tuoretta vastausta. Tarkista yhteys, sarja-asetukset ja muut väylän lukijat.",
+      "unsupported_meter": "Valmistajaa, laiteversiota tai tietoprofiilia ei tueta.",
+      "wrong_meter": "Toinen mittari vastaa. Nykyistä energiahistoriaa ei voi liittää siihen."
+    },
+    "abort": {
+      "already_configured": "Tämä mittari tai TCP-silta on jo määritetty.",
+      "reconfigure_successful": "Yhteys on päivitetty."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Lukuasetukset",
+        "description": "Kyselyt suoritetaan peräkkäin. Hitaat vastaukset ja uusintayritykset voivat pidentää todellista aikaväliä. Aloita 2 sekunnista; tämä on kyselypohjainen yhteys, ei push.",
+        "data": {
+          "scan_interval": "Lukuväli (sekuntia)",
+          "response_timeout": "Vastauksen aikakatkaisu (sekuntia)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "power": {
+        "name": "Teho"
+      },
+      "energy": {
+        "name": "Energia"
+      },
+      "reactive_power": {
+        "name": "Loisteho"
+      },
+      "ct_ratio": {
+        "name": "Muuntajan muuntosuhde"
+      },
+      "mbus_status": {
+        "name": "M-Bus-tila"
+      },
+      "last_read": {
+        "name": "Viimeisin onnistunut luku"
+      },
+      "read_duration": {
+        "name": "Luvun kesto"
+      },
+      "read_attempts": {
+        "name": "Lukuyritykset"
+      },
+      "voltage_l1": {
+        "name": "Jännite L1"
+      },
+      "current_l1": {
+        "name": "Virta L1"
+      },
+      "power_l1": {
+        "name": "Teho L1"
+      },
+      "reactive_power_l1": {
+        "name": "Loisteho L1"
+      },
+      "voltage_l2": {
+        "name": "Jännite L2"
+      },
+      "current_l2": {
+        "name": "Virta L2"
+      },
+      "power_l2": {
+        "name": "Teho L2"
+      },
+      "reactive_power_l2": {
+        "name": "Loisteho L2"
+      },
+      "voltage_l3": {
+        "name": "Jännite L3"
+      },
+      "current_l3": {
+        "name": "Virta L3"
+      },
+      "power_l3": {
+        "name": "Teho L3"
+      },
+      "reactive_power_l3": {
+        "name": "Loisteho L3"
+      }
+    }
+  }
+}

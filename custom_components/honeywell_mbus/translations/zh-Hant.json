@@ -1,0 +1,110 @@
+{
+  "title": "Honeywell M-Bus",
+  "config": {
+    "step": {
+      "user": {
+        "title": "連接 Honeywell M-Bus 電表",
+        "description": "輸入主機、TCP 資料連接埠和主位址。請先停止匯流排上的其他讀取程式。另行設定序列埠：8E1、無流量控制、鮑率與電表一致。無需管理密碼。",
+        "data": {
+          "host": "主機",
+          "port": "TCP 資料連接埠",
+          "primary_address": "M-Bus 主位址"
+        }
+      },
+      "reconfigure": {
+        "title": "變更連線",
+        "description": "只允許連接同一電表。實體識別碼將保留。",
+        "data": {
+          "host": "主機",
+          "port": "TCP 資料連接埠",
+          "primary_address": "M-Bus 主位址"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "未收到有效且最新的回應。請檢查連線、序列埠設定和其他匯流排讀取程式。",
+      "unsupported_meter": "不支援此製造商、裝置版本或資料格式。",
+      "wrong_meter": "回應來自另一電表，不能將現有能源歷史紀錄指派給它。"
+    },
+    "abort": {
+      "already_configured": "此電表或 TCP 橋接器已設定。",
+      "reconfigure_successful": "連線已更新。"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "輪詢選項",
+        "description": "請求依序執行。回應緩慢及重試可能延長實際間隔。建議從 2 秒開始；此連線使用輪詢，而非推送。",
+        "data": {
+          "scan_interval": "輪詢間隔（秒）",
+          "response_timeout": "回應逾時（秒）"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "power": {
+        "name": "功率"
+      },
+      "energy": {
+        "name": "電能"
+      },
+      "reactive_power": {
+        "name": "無功功率"
+      },
+      "ct_ratio": {
+        "name": "比流器變比"
+      },
+      "mbus_status": {
+        "name": "M-Bus 狀態"
+      },
+      "last_read": {
+        "name": "上次成功讀取"
+      },
+      "read_duration": {
+        "name": "讀取耗時"
+      },
+      "read_attempts": {
+        "name": "讀取嘗試次數"
+      },
+      "voltage_l1": {
+        "name": "電壓 L1"
+      },
+      "current_l1": {
+        "name": "電流 L1"
+      },
+      "power_l1": {
+        "name": "功率 L1"
+      },
+      "reactive_power_l1": {
+        "name": "無功功率 L1"
+      },
+      "voltage_l2": {
+        "name": "電壓 L2"
+      },
+      "current_l2": {
+        "name": "電流 L2"
+      },
+      "power_l2": {
+        "name": "功率 L2"
+      },
+      "reactive_power_l2": {
+        "name": "無功功率 L2"
+      },
+      "voltage_l3": {
+        "name": "電壓 L3"
+      },
+      "current_l3": {
+        "name": "電流 L3"
+      },
+      "power_l3": {
+        "name": "功率 L3"
+      },
+      "reactive_power_l3": {
+        "name": "無功功率 L3"
+      }
+    }
+  }
+}

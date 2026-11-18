@@ -30,6 +30,9 @@ from .api import MeterSample
 from .const import DOMAIN, MANUFACTURER, MODEL
 from .coordinator import HoneywellCoordinator
 
+# Coordinator owns all I/O; entity updates must not create parallel requests.
+PARALLEL_UPDATES = 0
+
 type NativeValue = Decimal | int | float | datetime
 
 

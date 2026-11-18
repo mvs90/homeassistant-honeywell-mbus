@@ -1,0 +1,110 @@
+{
+  "title": "Honeywell M-Bus",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Honeywell M-Bus メーターに接続",
+        "description": "ホスト、TCP データポート、プライマリアドレスを入力してください。先に他のバス読み取りを停止してください。シリアル接続は別途 8E1、フロー制御なし、メーターと同じ通信速度に設定します。管理パスワードは不要です。",
+        "data": {
+          "host": "ホスト",
+          "port": "TCP データポート",
+          "primary_address": "M-Bus プライマリアドレス"
+        }
+      },
+      "reconfigure": {
+        "title": "接続を変更",
+        "description": "同じメーターのみ接続できます。エンティティ ID は維持されます。",
+        "data": {
+          "host": "ホスト",
+          "port": "TCP データポート",
+          "primary_address": "M-Bus プライマリアドレス"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "有効な最新の応答がありません。接続、シリアル設定、他のバス読み取りを確認してください。",
+      "unsupported_meter": "このメーカー、デバイスバージョン、またはデータ形式には対応していません。",
+      "wrong_meter": "別のメーターが応答しています。既存のエネルギー履歴を割り当てることはできません。"
+    },
+    "abort": {
+      "already_configured": "このメーターまたは TCP ブリッジは設定済みです。",
+      "reconfigure_successful": "接続を更新しました。"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "ポーリング設定",
+        "description": "要求は順番に実行されます。応答の遅延や再試行により実際の間隔が延びる場合があります。まず 2 秒に設定してください。プッシュ通信ではありません。",
+        "data": {
+          "scan_interval": "ポーリング間隔（秒）",
+          "response_timeout": "応答タイムアウト（秒）"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "power": {
+        "name": "電力"
+      },
+      "energy": {
+        "name": "電力量"
+      },
+      "reactive_power": {
+        "name": "無効電力"
+      },
+      "ct_ratio": {
+        "name": "変流比"
+      },
+      "mbus_status": {
+        "name": "M-Bus 状態"
+      },
+      "last_read": {
+        "name": "最後に成功した読み取り"
+      },
+      "read_duration": {
+        "name": "読み取り時間"
+      },
+      "read_attempts": {
+        "name": "読み取り試行回数"
+      },
+      "voltage_l1": {
+        "name": "電圧 L1"
+      },
+      "current_l1": {
+        "name": "電流 L1"
+      },
+      "power_l1": {
+        "name": "電力 L1"
+      },
+      "reactive_power_l1": {
+        "name": "無効電力 L1"
+      },
+      "voltage_l2": {
+        "name": "電圧 L2"
+      },
+      "current_l2": {
+        "name": "電流 L2"
+      },
+      "power_l2": {
+        "name": "電力 L2"
+      },
+      "reactive_power_l2": {
+        "name": "無効電力 L2"
+      },
+      "voltage_l3": {
+        "name": "電圧 L3"
+      },
+      "current_l3": {
+        "name": "電流 L3"
+      },
+      "power_l3": {
+        "name": "電力 L3"
+      },
+      "reactive_power_l3": {
+        "name": "無効電力 L3"
+      }
+    }
+  }
+}
