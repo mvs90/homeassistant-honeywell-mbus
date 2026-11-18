@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage*
+htmlcov/
+.venv/
+.deps/
+*.token
+*.password
+*.log
+local-configuration/
+test-results/

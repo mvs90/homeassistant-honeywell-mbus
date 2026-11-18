@@ -1,0 +1,110 @@
+{
+  "title": "Honeywell M-Bus",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect a Honeywell M-Bus meter",
+        "description": "Enter the raw TCP serial bridge endpoint and one primary address. Stop other readers on this bus first. Configure the gateway UART separately: 8E1, no handshake, matching baud rate. No management password is needed.",
+        "data": {
+          "host": "Host",
+          "port": "TCP data port",
+          "primary_address": "M-Bus primary address"
+        }
+      },
+      "reconfigure": {
+        "title": "Change the connection",
+        "description": "Only the same meter can replace this endpoint. Existing entity identities are retained.",
+        "data": {
+          "host": "Host",
+          "port": "TCP data port",
+          "primary_address": "M-Bus primary address"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "No valid, fresh response. Check the endpoint, UART settings and competing bus readers.",
+      "unsupported_meter": "The meter manufacturer, device version or record profile is not supported.",
+      "wrong_meter": "This endpoint answers for another meter. Existing energy history cannot be reassigned to it."
+    },
+    "abort": {
+      "already_configured": "This meter or TCP bridge is already configured.",
+      "reconfigure_successful": "The connection was updated."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Polling options",
+        "description": "Polling is serialized. Slow responses and bounded retries may extend the actual interval. Two seconds is the tested starting point; this is polling, not push.",
+        "data": {
+          "scan_interval": "Polling interval (seconds)",
+          "response_timeout": "Response timeout (seconds)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "power": {
+        "name": "Power"
+      },
+      "energy": {
+        "name": "Energy"
+      },
+      "reactive_power": {
+        "name": "Reactive power"
+      },
+      "ct_ratio": {
+        "name": "Transformer ratio"
+      },
+      "mbus_status": {
+        "name": "M-Bus status"
+      },
+      "last_read": {
+        "name": "Last successful read"
+      },
+      "read_duration": {
+        "name": "Read duration"
+      },
+      "read_attempts": {
+        "name": "Read attempts"
+      },
+      "voltage_l1": {
+        "name": "Voltage L1"
+      },
+      "current_l1": {
+        "name": "Current L1"
+      },
+      "power_l1": {
+        "name": "Power L1"
+      },
+      "reactive_power_l1": {
+        "name": "Reactive power L1"
+      },
+      "voltage_l2": {
+        "name": "Voltage L2"
+      },
+      "current_l2": {
+        "name": "Current L2"
+      },
+      "power_l2": {
+        "name": "Power L2"
+      },
+      "reactive_power_l2": {
+        "name": "Reactive power L2"
+      },
+      "voltage_l3": {
+        "name": "Voltage L3"
+      },
+      "current_l3": {
+        "name": "Current L3"
+      },
+      "power_l3": {
+        "name": "Power L3"
+      },
+      "reactive_power_l3": {
+        "name": "Reactive power L3"
+      }
+    }
+  }
+}

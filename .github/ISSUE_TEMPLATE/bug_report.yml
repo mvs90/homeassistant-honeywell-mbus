@@ -1,0 +1,25 @@
+name: Bug report
+description: Report a problem using redacted information.
+body:
+  - type: input
+    id: versions
+    attributes:
+      label: Home Assistant and integration versions
+    validations:
+      required: true
+  - type: input
+    id: hardware
+    attributes:
+      label: Meter model, device-version byte and gateway model
+      description: Do not include real serial numbers, addresses or passwords.
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Redacted diagnostics and relevant errors
+      description: Review the content for private information before posting.

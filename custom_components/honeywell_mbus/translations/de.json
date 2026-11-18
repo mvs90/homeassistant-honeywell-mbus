@@ -1,0 +1,110 @@
+{
+  "title": "Honeywell M-Bus",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Honeywell-M-Bus-Zähler verbinden",
+        "description": "Rohdaten-TCP-Schnittstelle und eine Primäradresse eingeben. Andere Leser auf diesem Bus vorher stoppen. UART am Gateway separat auf 8E1, ohne Handshake und passende Baudrate einstellen. Ein Verwaltungskennwort wird nicht benötigt.",
+        "data": {
+          "host": "Host",
+          "port": "TCP-Datenport",
+          "primary_address": "M-Bus-Primäradresse"
+        }
+      },
+      "reconfigure": {
+        "title": "Verbindung ändern",
+        "description": "Nur derselbe Zähler darf an die neue Verbindung wechseln. Bestehende Entitätskennungen bleiben erhalten.",
+        "data": {
+          "host": "Host",
+          "port": "TCP-Datenport",
+          "primary_address": "M-Bus-Primäradresse"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Keine gültige, frische Antwort. Verbindung, UART-Parameter und andere Busleser prüfen.",
+      "unsupported_meter": "Hersteller, Geräteversion oder Telegrammprofil werden nicht unterstützt.",
+      "wrong_meter": "Hier antwortet ein anderer Zähler. Bestehende Energiehistorien dürfen ihm nicht zugewiesen werden."
+    },
+    "abort": {
+      "already_configured": "Dieser Zähler oder diese TCP-Brücke ist bereits eingerichtet.",
+      "reconfigure_successful": "Die Verbindung wurde aktualisiert."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Abfrageoptionen",
+        "description": "Abfragen laufen nacheinander. Langsame Antworten und begrenzte Wiederholungen können den tatsächlichen Abstand verlängern. Zwei Sekunden sind der geprüfte Ausgangswert; es handelt sich um Polling, nicht Push.",
+        "data": {
+          "scan_interval": "Abfrageintervall (Sekunden)",
+          "response_timeout": "Antwortzeitlimit (Sekunden)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "power": {
+        "name": "Leistung"
+      },
+      "energy": {
+        "name": "Energie"
+      },
+      "reactive_power": {
+        "name": "Blindleistung"
+      },
+      "ct_ratio": {
+        "name": "Wandlerfaktor"
+      },
+      "mbus_status": {
+        "name": "M-Bus-Status"
+      },
+      "last_read": {
+        "name": "Letzte erfolgreiche Abfrage"
+      },
+      "read_duration": {
+        "name": "Abfragedauer"
+      },
+      "read_attempts": {
+        "name": "Abfrageversuche"
+      },
+      "voltage_l1": {
+        "name": "Spannung L1"
+      },
+      "current_l1": {
+        "name": "Strom L1"
+      },
+      "power_l1": {
+        "name": "Leistung L1"
+      },
+      "reactive_power_l1": {
+        "name": "Blindleistung L1"
+      },
+      "voltage_l2": {
+        "name": "Spannung L2"
+      },
+      "current_l2": {
+        "name": "Strom L2"
+      },
+      "power_l2": {
+        "name": "Leistung L2"
+      },
+      "reactive_power_l2": {
+        "name": "Blindleistung L2"
+      },
+      "voltage_l3": {
+        "name": "Spannung L3"
+      },
+      "current_l3": {
+        "name": "Strom L3"
+      },
+      "power_l3": {
+        "name": "Leistung L3"
+      },
+      "reactive_power_l3": {
+        "name": "Blindleistung L3"
+      }
+    }
+  }
+}
